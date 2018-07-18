@@ -1,0 +1,129 @@
+﻿@model ProductVM;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+    <div class="panel-heading panel-head">Product</div>
+    <div class="panel-body">
+        <div class="container" id="AddProdBtn">
+            <button type="button" class="btn btn-primary" id="AddProd">Add Product</button>
+        </div>
+        <div class="container" id="EditProdBtn" style="display:none">
+            <button type="button" class="btn btn-primary" id="EditProd">Edit Product</button>
+        </div>
+        <div class="container" id="myProdDiv" aria-hidden="true">
+            <div class="row">
+                <div class="col-*-* col-*-*" id="AddProdTitle">
+                    <h4 class="modal-title" id="myAddProd">Add Product</h4>
+                </div>
+                <div class="col-*-* col-*-*" id="EditProdTitle" style="display:none">
+                    <h4 class="modal-title" id="myAddProd">Edit Product</h4>
+                </div>
+                <form class="form-horizontal">
+                    <div class="form-group ">
+                        <div class="col-md-2">
+                            @Html.LabelFor(model => model.Id, new { htmlAttributes = new { @class = "label col-md-4" } })
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="ProdId" placeholder="Id" disabled="disabled" />
+                        </div>
+                    </div>
+                        <div class="form-group ">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.Name, new { htmlAttributes = new { @class = "label col-md-4" } })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name" } })
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.Description, new { htmlAttributes = new { @class = "label col-md-4" } })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = "Description" } })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.SKU, new { htmlAttributes = new { @class = "label col-md-4" } })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.SKU, new { htmlAttributes = new { @class = "form-control", @placeholder = "SKU" } })
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <div class="col-md-2">
+                                @Html.LabelFor(model => model.Price, new { htmlAttributes = new { @class = "label col-md-4" } })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control", @placeholder = "Price" } })
+                            </div>
+                        </div>
+</form>
+                @*</div>*@
+                <div class="form-group ">
+                    <button type="button" class="btn btn-primary" id="btnAdd">Add</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2>Product Record</h2>
+            @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Product</button><br /><br />*@
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SKU)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    /*.table > thead > tr > th {
+        border-right: 1px solid #ddd;
+        border-bottom: 0;
+    }
+
+    .table > tbody > tr > td {
+        border-right: 1px solid #ddd;
+    }
+
+    .table > thead > tr > th:last-of-type {
+        border-right: 0px;
+    }
+
+    .table > tbody > tr > td:last-of-type {
+        border-right: 0px;
+    }
+
+    .panel-body {
+        padding: 0;
+    }
+
+        .panel-body > .table {
+            margin-bottom: 0px;
+        }*/
+</style>
+

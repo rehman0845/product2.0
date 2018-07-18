@@ -1,0 +1,11 @@
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\obj\Debug\netcoreapp2.0\Crud_Core.csprojResolveAssemblyReference.cache
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\obj\Debug\netcoreapp2.0\Crud_Core.csproj.CoreCompileInputs.cache
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\obj\Debug\netcoreapp2.0\Crud_Core.AssemblyInfoInputs.cache
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\obj\Debug\netcoreapp2.0\Crud_Core.AssemblyInfo.cs
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\bin\Debug\netcoreapp2.0\Crud_Core.deps.json
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\bin\Debug\netcoreapp2.0\Crud_Core.runtimeconfig.json
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\bin\Debug\netcoreapp2.0\Crud_Core.runtimeconfig.dev.json
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\bin\Debug\netcoreapp2.0\Crud_Core.dll
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\bin\Debug\netcoreapp2.0\Crud_Core.pdb
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\obj\Debug\netcoreapp2.0\Crud_Core.dll
+G:\rehman\test\programs\MVC\Crud_Core\Crud_Core\obj\Debug\netcoreapp2.0\Crud_Core.pdb
