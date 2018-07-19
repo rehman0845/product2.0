@@ -25,69 +25,118 @@ namespace Crud_Core.Controllers
             return View();
         }
 
-        public ActionResult List()
+        public JsonResult List()
         {
-            var _prodList = crudFactory.GetList();
-            return Json(_prodList);
-        }
-
-        // GET: Home/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            try
+            {
+                var _prodList = crudFactory.GetList();
+                return Json(_prodList);
+            }
+            catch(Exception ex)
+            {
+                return Json(ex.Message);
+            }
+            
         }
 
         // POST: Product/Create
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Create([FromBody]ProductVM prod)
+        public JsonResult Create([FromBody]ProductVM prod)
         {
             try
             {
                 // TODO: Add insert logic here
-                //if (ModelState.IsValid)
-                //{
-                crudFactory.CreateProduct(prod);
-                //}
-                return Json(prod);
+                if (prod != null)
+                {
+                    crudFactory.CreateProduct(prod);
+                    return Json(prod);
+                }
+                else
+                {
+                    return Json(new ProductVM());
+
+                }
                 //return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                return Json(string.Empty);
+                return Json(ex.Message);
             }
         }
 
         // GET: Product/Edit/5
-        public ActionResult GetbyId(int id)
+        public JsonResult GetbyId(int id)
         {
-            var _prod = crudFactory.GetProductById(id);
-            return Json(_prod);
+            try
+            {
+                if (id > 0)
+                {
+                    var _prod = crudFactory.GetProductById(id);
+                    return Json(_prod);
+                }
+                else
+                {
+                    return Json(new ProductVM());
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+
+
         }
 
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Edit([FromBody]ProductVM prod)
+        public JsonResult Edit([FromBody]ProductVM prod)
         {
 
             try
             {
+                if (prod != null)
+                {
+                    crudFactory.UpdateProduct(prod);
+                    return Json(prod);
+                }
+                else
+                {
+                    return Json(new ProductVM());
+                }
                 // TODO: Add update logic here
-                crudFactory.UpdateProduct(prod);
-                return Json(prod);
+
             }
-            catch
+            catch (Exception ex)
             {
-                return Json(string.Empty);
+                return Json(ex.Message);
             }
         }
 
         // GET: Product/Delete/5
-        public ActionResult Delete(int id)
+        public JsonResult Delete(int id)
         {
-            crudFactory.DeleteProduct(id);
-            return Json(id);
+            try
+            {
+                // TODO: Add delete logic here
+
+                if (id > 0)
+                {
+                    crudFactory.DeleteProduct(id);
+                    return Json(id);
+                }
+                else
+                {
+                    return Json(0);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+
         }
     }
 }
